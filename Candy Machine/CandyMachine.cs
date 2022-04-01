@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Candy_Machine
@@ -42,7 +38,7 @@ namespace Candy_Machine
         /// 3         = Rivella  = 0
         /// 4         = Spa      = 0
         /// 5         = Sprite   = 0
-        
+
         // Flesje is de hoeveelheid flessen nog over in de machine
         int[] Flesje = new int[6];
         /// Flesje[] - Flesje - Standaard
@@ -208,7 +204,7 @@ namespace Candy_Machine
                         drinks[i].ForeColor = Color.Red;
                         inMachine[i].BackColor = Color.Firebrick;
                     }
-                    
+
                 }
             }
         }
@@ -295,7 +291,7 @@ namespace Candy_Machine
                     // Het weghalen van de 'x'
                     change[i] = change[i].Remove(change[i].Length - 1);
                     // Getal parsen tot een int
-                    Spare = int.Parse(change[i]);                   
+                    Spare = int.Parse(change[i]);
 
                     // Wanneer het aantal munten in de machine groter of gelijk is aan het aantal wisselgeld van die munt, wordt het simpelweg afgetrokken
                     if (iCoin[i] >= Spare)
@@ -330,7 +326,7 @@ namespace Candy_Machine
                             Money = worth[i] * Spare;
 
                             // Wanneer de het aantal munten in de machine NIET 0 is && (Verschuldigd geld - cost) groter of gelijk aan 0, doet de while-loop zijn ding.
-                            while ( (iCoin[j] != 0) && ( (Money - worth[j]) >= 0) )
+                            while ((iCoin[j] != 0) && ((Money - worth[j]) >= 0))
                             {
                                 // Er wordt één coin afgeteld
                                 iCoin[j]--;
@@ -350,7 +346,7 @@ namespace Candy_Machine
                             txtErr.Text = "";
                         }
                     }
-     
+
                 }
             }
         }
@@ -432,7 +428,7 @@ namespace Candy_Machine
                         iCoin[i]--;
                     }
                 }
-                
+
                 // Opvangbak refreshen
                 Opvang[i].Text = iCoinB[i].ToString();
 
@@ -484,7 +480,7 @@ namespace Candy_Machine
                     txtCassis.Text = Drankje[0].ToString();
                     txtFLESCassis.Text = Flesje[0].ToString();
                     break;
-                case "Cola": 
+                case "Cola":
                     iTotaal -= 1.2m;
                     Drankje[1]++;
                     Flesje[1]--;
@@ -528,7 +524,7 @@ namespace Candy_Machine
 
             // De knoppen worden gecontroleerd
             ButtonCheck();
-            
+
         }
 
         private void PiClick(object sender, EventArgs e)
@@ -672,16 +668,16 @@ namespace Candy_Machine
                         switch (j)
                         {
                             case 0:
-                                Flesje[i-1] = int.Parse(Loader[j]);
+                                Flesje[i - 1] = int.Parse(Loader[j]);
                                 break;
                             case 1:
-                                Drankje[i-1] = int.Parse(Loader[j]);
+                                Drankje[i - 1] = int.Parse(Loader[j]);
                                 break;
                             case 2:
-                                iCoin[i-1] = int.Parse(Loader[j]);
+                                iCoin[i - 1] = int.Parse(Loader[j]);
                                 break;
                             case 3:
-                                iCoinB[i-1] = int.Parse(Loader[j]);
+                                iCoinB[i - 1] = int.Parse(Loader[j]);
                                 break;
                         }
                     }
@@ -691,10 +687,10 @@ namespace Candy_Machine
                         switch (j)
                         {
                             case 0:
-                                Flesje[i-1] = int.Parse(Loader[j]);
+                                Flesje[i - 1] = int.Parse(Loader[j]);
                                 break;
                             case 1:
-                                Drankje[i-1] = int.Parse(Loader[j]);
+                                Drankje[i - 1] = int.Parse(Loader[j]);
                                 break;
                             case 2:
                                 iTotaal = Decimal.Parse(Loader[j]);
@@ -704,7 +700,7 @@ namespace Candy_Machine
                                 break;
                         }
                     }
-                    
+
                 }
             }
             // De standaardverversingen

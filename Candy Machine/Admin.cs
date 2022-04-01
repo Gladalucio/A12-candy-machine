@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Candy_Machine
@@ -31,7 +26,7 @@ namespace Candy_Machine
         {
             frm1 = Owner as CandyMachine;
             // Bij het inladen krijgt Length de waarde "1" (want Input is nog leeg)
-            Length = Input.Length+1;
+            Length = Input.Length + 1;
         }
 
         // De 10 buttons met cijfers er op zijn gegroepeerd in een "ButtonClick"
@@ -41,7 +36,7 @@ namespace Candy_Machine
             Button btn = (Button)sender;
             // De string Name krijgt de tekst die op de knop staat. Met behulp van een switch-case wordt bepaald wie het is en wordt de juiste code uitgevoerd
             string Name = btn.Text;
-            
+
             if (Length <= 4)
             {
                 // De string "Input" wordt gevuld met de invoer van de gebruiker
@@ -122,7 +117,7 @@ namespace Candy_Machine
                     }
                 }
             }
-            
+
             // Wanneer de Length 4 is, en de invoer van de gebruiker niet gelijk is aan de PIn wordt alles gereset
             if (Length == 4 && Input != PIN)
             {
